@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    var quizTitle = "Wizualizacja Danych Quiz";
-    var quiz = [
+    const quiz = [
         {
             "question": "Ile razy wzrosła cena żyta w 2020 roku?",
             "image": "https://www.quickanddirtytips.com/sites/default/files/images/5360/line_graph.png",
@@ -28,7 +27,7 @@ $(document).ready(function () {
             "explanation": "Wzrosła aż 5 krotnie",
         }
     ];
-    var currentQuestion = 0,
+    let currentQuestion = 0,
         score = 0,
         submit = true,
         picked;
@@ -56,7 +55,7 @@ $(document).ready(function () {
             $('#questionImage').attr('src', quiz[currentQuestion]['image']);
             $('#correctImage').addClass('hidden').attr('src', quiz[currentQuestion]['goodImage']);
 
-            $('#submit').text('Sprawdź odpowiedź').css({
+            $('#submitbutton').text('Sprawdź odpowiedź').css({
                 'color': '#222'
             }).off('click');
 
@@ -88,7 +87,7 @@ $(document).ready(function () {
             }
             currentQuestion++;
 
-            $('#submit').html(currentQuestion != quiz.length ? "Kolejne pytanie &raquo;" : 'Zakończ quiz').on('click', function () {
+            $('#submitbutton').html(currentQuestion != quiz.length ? "Kolejne pytanie &raquo;" : 'Zakończ quiz').on('click', function () {
                 if (currentQuestion == quiz.length) {
                     endQuiz();
                 } else {
@@ -99,20 +98,8 @@ $(document).ready(function () {
 
 
         function setupButtons() {
-            $('.answer').on('mouseover', function () {
-                $(this).css({
-                    'background-color': '#e1e1e1'
-                });
-            });
-
-            $('.answer').on('mouseout', function () {
-                $(this).css({
-                    'background-color': '#fff'
-                });
-            })
-
             $('.answer').on('click', function () {
-                picked = $(this).attr('data-index');
+                picked = $(this).attr('name');
 
                 $('.answer').removeAttr('style').off('mouseout mouseover');
                 $(this).css({
@@ -123,7 +110,7 @@ $(document).ready(function () {
 
                 if (submit) {
                     submit = false;
-                    $('#submit').css({
+                    $('#submitbutton').css({
                         'color': '#000'
                     }).on('click', function () {
                         $('.answer').off('click');
@@ -136,9 +123,9 @@ $(document).ready(function () {
 
         function endQuiz() {
             $('#explanation').empty();
-            $('#answersDiv').remove();
+            $('#answers-box').remove();
             $('#imagesDiv').remove();
-            $('#submit').remove();
+            $('#submitbutton').remove();
             $("#questionCounter").text('Koniec quizu');  
             $('#question').text("Odpowiedziałeś poprawnie na " + score + " z " + quiz.length + " pytań.");
             $(document.createElement('h2')).css({
@@ -149,11 +136,10 @@ $(document).ready(function () {
 
 
         function init() {
-            $('#title').text(quizTitle);
             nextQuestion();
         }
 
         init();
     });
-})
+});
 
