@@ -30,7 +30,10 @@ $(document).ready(function () {
     let currentQuestion = 0,
         score = 0,
         submit = true,
-        picked;
+        picked,
+        chord,
+        tada,
+        shutdown;
 
     function addChoices(choices) {
         for (var i = 0; i < choices.length; i++) {
@@ -63,10 +66,12 @@ $(document).ready(function () {
         if (quiz[currentQuestion]['choices'][choice] === quiz[currentQuestion]['correct']) {
             $('#answers-box .field-row').eq(choice).addClass('correct');
             $('#explanation').text('Super! ' + quiz[currentQuestion]['explanation']);
+            tada.play();
             score++;
         } else {
             $('#answers-box .field-row').eq(choice).addClass('incorrect');
             $('#explanation').text('Źle! ' + quiz[currentQuestion]['explanation']);
+            chord.play();
         }
         currentQuestion++;
 
@@ -106,10 +111,14 @@ $(document).ready(function () {
             'text-align': 'center',
             'font-size': '4em'
         }).text(Math.round(score / quiz.length * 100) + '%').insertAfter('#question');
+        shutdown.play();
     }
 
     function init() {
         nextQuestion();
+        chord = new Audio('audio/chord.mp3');
+        tada = new Audio('audio/tada.mp3');
+        shutdown = new Audio('audio/shutdown.mp3');
     }
 
     init();
