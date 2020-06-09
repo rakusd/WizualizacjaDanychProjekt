@@ -26,6 +26,6 @@ for index, row in df.iterrows():
 
 plt.savefig('correct.png', dpi = 150,
             bbox_inches = 'tight',
-            trasparent = True)
+            transparent = True)
 
 # %%
