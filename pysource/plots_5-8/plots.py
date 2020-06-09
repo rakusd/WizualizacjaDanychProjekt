@@ -2,8 +2,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy.interpolate import interpolate
 
 sns.set_style('whitegrid')
+
 
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
@@ -28,7 +30,7 @@ ax.text(x = X[Y2.argmax()] - 0.3, y = 0.45 * Y1[Y1.argmax()], s = labels[1],
 plt.title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.xticks(X)
 plt.gca().invert_xaxis()
-plt.savefig('plot_5_incorrect.svg')
+plt.savefig('img5_incorrect.svg')
 plt.show()
 
 # correct plot
@@ -44,7 +46,7 @@ ax.text(x = X[Y2.argmax()] - 3, y = 0.45 * Y1[Y1.argmax()], s = labels[1],
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
 plt.title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.xticks(X)
-plt.savefig('plot_5_correct.svg')
+plt.savefig('img5_correct.svg')
 plt.show()
 
 # WYKRES 6 - niepoprawne kolory - Shoe color frequency
@@ -62,7 +64,7 @@ ax.set_ylabel('Number')
 ax.set_axisbelow(True)
 ax.yaxis.grid(color='grey')
 ax.set_title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
-plt.savefig('plot_6_incorrect.svg')
+plt.savefig('img6_incorrect.svg')
 plt.show()
 
 # correct plot
@@ -76,14 +78,73 @@ ax.set_ylabel('Number')
 ax.set_axisbelow(True)
 ax.yaxis.grid(color='grey')
 ax.set_title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
-plt.savefig('plot_6_correct.svg')
+plt.savefig('img6_correct.svg')
 plt.show()
 
-# WYKRES 7 - różne sklale na osiach Y - 
 
-X = pd.date_range('2010-01-01','2014-12-01', freq='MS').strftime("%B %Y").tolist()
-Y_sale = np.random.normal(180000, 250000, len(X))
-Y_profit = np.random.normal(20000, 40000, len(X))
+# WYKRES 7 - różne sklale na osiach Y - 
+X = np.arange(1, 61)
+
+np.random.seed(223)
+Y_sale = np.random.exponential(2, (60)) * 40000
+Y_profit = np.random.exponential(2, (60)) * 10000
+
+# Incorrect plot
+fig, ax1 = plt.subplots(figsize=(12, 4))
+
+ax1.set_xlabel('Months of Order Date')
+ax1.set_ylabel('Sales')
+ls = ax1.plot(X, Y_sale, color='green', label='Sales')
+ax1.ticklabel_format(axis='y', style='plain')
+ax1.set_ylim([0, 400000])
+ax1.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
+ax1.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
+
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+ax2.set_ylabel('Profit')  # we already handled the x-label with ax1
+lp = ax2.plot(X, Y_profit, color='blue', label='Profit')
+ax2.ticklabel_format(axis='y', style='plain')
+ax2.set_ylim([0, 100000])
+ax2.yaxis.set_ticks([0, 25000, 50000, 75000, 100000])
+ax2.set_yticklabels(['$0', '$25 000', '$50 000', '$75 000', '$100 000'])
+
+fig.tight_layout()  # otherwise the right y-label is slightly clipped
+plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+
+lns = ls+lp
+labs = [l.get_label() for l in lns]
+ax1.legend(lns, labs, loc='upper left')
+
+plt.savefig('img7_incorrect.svg')
+plt.show()
+
+# correct plot
+fig, ax1 = plt.subplots(figsize=(12, 4))
+
+ax1.set_xlabel('Months of Order Date')
+ax1.set_ylabel('Sales')
+ls = ax1.plot(X, Y_sale, color='green', label='Sales')
+ax1.set_ylim([0, 400000])
+ax1.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
+ax1.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
+
+ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+lp = ax2.plot(X, Y_profit, color='blue', label='Profit')
+ax2.set_ylabel('Profit')
+ax2.set_ylim([0, 400000])
+ax2.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
+ax2.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
+
+fig.tight_layout()  # otherwise the right y-label is slightly clipped
+plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+
+lns = ls+lp
+labs = [l.get_label() for l in lns]
+ax1.legend(lns, labs, loc='upper left')
+
+plt.savefig('img7_correct.svg')
+plt.show()
+
 
 # WYKRES 8 - nieadekwatne stosunki pól do wartości etykiet
 X = [1997, 1999, 2001, 2002, 2003, 2004, 2006, 2007, 2007, 2008]
@@ -112,7 +173,7 @@ plt.xticks(np.arange(1996, 2010))
 plt.yticks(Y_ticks, ['$' + str(x) + 'M' for x in Y_ticks])
 plt.ylabel('Production Budget')
 plt.grid(True)
-plt.savefig('plot_8_incorrect.svg')
+plt.savefig('img8_incorrect.svg')
 plt.show()
 
 # Correct plot
@@ -133,5 +194,5 @@ for x, y, z, in zip(X, Y, Z):
     plt.text(x - (len(lab) / 20), y - 0.5, lab, fontdict={'fontsize' : 10, 'fontweight' : 'bold', 'color' : 'black'} )
 plt.ylabel('Production Budget')
 plt.grid(True)
-plt.savefig('plot_8_correct.svg')
+plt.savefig('img8_correct.svg')
 plt.show()
