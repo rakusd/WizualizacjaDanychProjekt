@@ -78,7 +78,6 @@ plt.suptitle('WE ARE ' + r"$\bf{" + 'LIVING' + "}$" + ' ' + r"$\bf{" + 'LONGER' 
     y=1.05, x = 0.52, fontsize=18)
 plt.title('Life expectancy at birth', fontsize=10)
 plt.savefig('base.png', dpi = 150,
-            bbox_inches = 'tight',
-            transparent = True)
+            bbox_inches = 'tight')
 
 # %%

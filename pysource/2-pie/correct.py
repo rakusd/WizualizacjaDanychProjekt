@@ -32,10 +32,10 @@ plt.savefig('correct.png', dpi = 150,
 # %%
 df.date = np.where(
     df.date == 'last year',
-    2018,
+    2015,
     np.where(
         df.date == 'today',
-        2019,
+        2016,
         1997
     )
 )
@@ -61,14 +61,13 @@ plt.xlabel('Year')
 
 for index, row in df.iterrows():
     plt.annotate(str(row.date) + ' - ' + str(row.percentage) + '%',
-                (row.date, row.percentage), xytext=(0, 5), 
+                (row.date, row.percentage), xytext=(0, -11), 
                 color = 'k', textcoords='offset points', 
                 ha='center')
 
 plt.ylim(0, 52)
 plt.title('AMERICANS WHO HAVE TRIED MARIJUANA')
-plt.savefig('correct_v2.svg',
+plt.savefig('correct_v2.png', dpi = 150,
             bbox_inches = 'tight')
-
 
 # %%
