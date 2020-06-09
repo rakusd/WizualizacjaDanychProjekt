@@ -38,7 +38,7 @@ ax.ticklabel_format(axis='y', style='plain')
 ax.set_axisbelow(True)
 ax.xaxis.grid(False)
 ax.yaxis.tick_right()
-ax.text(x = X[Y2.argmax()] - 4, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
+ax.text(x = X[Y2.argmax()] - 4.8, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
 ax.text(x = X[Y2.argmax()] - 3, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
