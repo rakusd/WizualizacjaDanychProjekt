@@ -2,8 +2,8 @@ $(document).ready(function () {
     const quiz = [
         {
             "question": "Ile wynosiła przewidywana oczekiwana długość życia w roku 2000?",
-            "image": "images/img1_correct.png",
-            "goodImage": "images/img1_incorrect.png",
+            "image": "images/img1_incorrect.png",
+            "goodImage": "images/img1_correct.png",
             "choices": [
                 "Nie wiadomo",
                 "60 lat",
@@ -11,13 +11,13 @@ $(document).ready(function () {
                 "70 lat"
             ],
             "correctIndex": 0,
-            "explanation": "Poprawna wiadomośc, to nie wiadomo, gdyż długość życia została zbadana tylko dla roku 1955 oraz 2015. Wartości pomiędzy nimi są jedynie liniową interpolacją, która jest trudna do identyfikacji na wykresie biegunowym. Prawidłowy wykres powinien przedstawiać tylko wartości obserwacji.",
+            "explanation": "Poprawna odpowiedź, to nie wiadomo, gdyż długość życia została zbadana tylko dla roku 1955 oraz 2015. Wartości pomiędzy nimi są jedynie liniową interpolacją, która jest trudna do identyfikacji na wykresie biegunowym. Prawidłowy wykres powinien przedstawiać tylko wartości obserwacji.",
             "source": "https://i.redd.it/n3nc8r2qql811.png"
         },
         {
             "question": "Co jest niepoprawnego w poniższym wykresie?",
-            "image": "images/img2_correct.png",
-            "goodImage": "images/img2_incorrect.png",
+            "image": "images/img2_incorrect.png",
+            "goodImage": "images/img2_correct.png",
             "choices": [
                 "Źródło danych jest niepoprawne",
                 "Źle dobrany został rodzaj wykresu",
@@ -32,8 +32,8 @@ $(document).ready(function () {
         },
         {
             "question": "Jak przedstawia się zależność czasu potrzebnego na wykonanie 20 milionów “zielonych krążków” od liczby robotników wykonujących pracę?",
-            "image": "images/img3_correct.png",
-            "goodImage": "images/img3_incorrect.png",
+            "image": "images/img3_incorrect.png",
+            "goodImage": "images/img3_correct.png",
             "choices": [
                 "Jest to zależność liniowa",
                 "Zależność przyjmuje kształt hiperboli",
@@ -41,39 +41,39 @@ $(document).ready(function () {
                 "Zależność jest wykładnicza"
             ],
             "correctIndex": 1,
-            "explanation": "Wartości na osi X nie są uporządkowane. Ponadto osie powinny być zamienione, gdyż liczba osób jest stałą wartością, a czas wykonania jest w tym przypadku zmienną.",
+            "explanation": "Ta zależność przyjmuje kształt hiperboli. Na niepoprawnym wykresie wartości na osi X nie są uporządkowane. Ponadto osie powinny być zamienione, gdyż liczba osób jest stałą wartością, a czas wykonania jest w tym przypadku zmienną.",
             "source": "https://i.redd.it/xp3hnmfkwiv31.png"
         },
         {
             "question": "Czy liczba morderstw z użyciem broni palnej zmalała od momentu wprowadzenia ustawy “Stand your ground”?",
-            "image": "images/img4_correct.png",
-            "goodImage": "images/img4_incorrect.png",
+            "image": "images/img4_incorrect.png",
+            "goodImage": "images/img4_correct.png",
             "choices": [
                 "Tak",
                 "Nie",
                 "Nie da się tego stwierdzić"
             ],
             "correctIndex": 1,
-            "explanation": "skala na osi Y została zamieniona, przez co trend wydaje się być odwrotny do rzeczywistego. Podobny efekt ma czerwona ramka - opis tekstowy zwykle jest umieszczany nad tłem, przez co kolor biały zaczyna wyglądać na kolor przekazujący informację.",
+            "explanation": "Liczba morderstw z użyciem broni palnej wzrosła po wprowadzeniu ustawy. Skala na osi Y została zamieniona, przez co trend wydaje się być odwrotny do rzeczywistego. Podobny efekt ma czerwona ramka - opis tekstowy zwykle jest umieszczany nad tłem, przez co kolor biały zaczyna wyglądać na kolor przekazujący informację.",
             "source": "https://i.redd.it/wyel993y3dmy.jpg"
         },
         {
             "question": "Jak zmieniało się w ostatnich latach zapotrzebowanie na stanowiska techniczne?",
-            "image": "images/img5_correct.png",
-            "goodImage": "images/img5_incorrect.png",
+            "image": "images/img5_incorrect.png",
+            "goodImage": "images/img5_correct.png",
             "choices": [
                 "Rosło",
                 "Malało",
                 "Nie zmieniało się"
             ],
             "correctIndex": 0,
-            "explanation": "Wartości na osi X są w kolejności malejącej, zaburzając chronologię. Przez to trend widoczny na wykresie jest odwrotny do rzeczywistego.",
+            "explanation": "Zapotrzebowanie na stanowiska techniczne rosło. Wartości na osi X są w kolejności malejącej, zaburzając chronologię. Przez to trend widoczny na wykresie jest odwrotny do rzeczywistego.",
             "source": "https://www.reddit.com/r/dataisugly/comments/fkvi5t/jobs_in_computing_are_dwindling_rapidly_wait_that/"
         },
         {
             "question": "Jaki jest najpopularniejszy kolor butów?",
-            "image": "images/img6_correct.png",
-            "goodImage": "images/img6_incorrect.png",
+            "image": "images/img6_inorrect.png",
+            "goodImage": "images/img6_correct.png",
             "choices": [
                 "Biały",
                 "Niebieski",
@@ -81,13 +81,13 @@ $(document).ready(function () {
                 "Czerwony"
             ],
             "correctIndex": 2,
-            "explanation": "Kolory przypisane słupkom nie odpowiadają kolorom butów. Dodatkowo między kolorami nie ma określonego porządku, w związku z czym czytelniejszy jest ustawienie słupków w kolejności rosnącej lub malejącej.",
+            "explanation": "Czarny jest najpopularniejszym kolorem butów. Kolory przypisane słupkom nie odpowiadają kolorom butów. Dodatkowo między kolorami nie ma określonego porządku, w związku z czym czytelniejszy jest ustawienie słupków w kolejności rosnącej lub malejącej.",
             "source": "https://www.reddit.com/r/dataisugly/comments/ey62bz/shoe_color_frequency/"
         },
         {
-            "question": " Na końcu przedziału widocznego wartość zysku była w stosunku do wartości sprzedaży...",
-            "image": "images/img7_correct.png",
-            "goodImage": "images/img7_incorrect.png",
+            "question": "Na końcu przedziału widocznego wartość zysku była w stosunku do wartości sprzedaży...",
+            "image": "images/img7_incorrect.png",
+            "goodImage": "images/img7_correct.png",
             "choices": [
                 "... zdecydowanie większa",
                 "... zdecydowanie mniejsza",
@@ -99,8 +99,8 @@ $(document).ready(function () {
         },
         {
             "question": "O ile procent większy jest plon ziarna pszenicy typu APOSTEL od plonu ziarna pszenicy typu Formacja?",
-            "image": "images/img8_correct.png",
-            "goodImage": "images/img8_incorrect.png",
+            "image": "images/img8_incorrect.png",
+            "goodImage": "images/img8_correct.png",
             "choices": [
                 "250%",
                 "100%",
@@ -113,8 +113,8 @@ $(document).ready(function () {
         },
         {
             "question": "Jaki procent ludności odpowiedziało “Zdecydowanie nie” na pytanie ankietowe?",
-            "image": "images/img9_correct.png",
-            "goodImage": "images/img9_incorrect.png",
+            "image": "images/img9_incorrect.png",
+            "goodImage": "images/img9_correct.png",
             "choices": [
                 "11-15%",
                 "16-20%",
@@ -127,8 +127,8 @@ $(document).ready(function () {
         },
         {
             "question": "Czy podwyżka wynagrodzeń nauczycieli w roku 2020 jest wyższa niż w roku 2019?",
-            "image": "images/img10_correct.png",
-            "goodImage": "images/img10_incorrect.png",
+            "image": "images/img10_incorrect.png",
+            "goodImage": "images/img10_correct.png",
             "choices": [
                 "Tak",
                 "Nie"
@@ -191,14 +191,13 @@ $(document).ready(function () {
 
         if (parseInt(choice) === quiz[currentQuestion]['correctIndex']) {
             $('#answers-box .field-row').eq(choice).addClass('correct');
-            $('#explanation').text(quiz[currentQuestion]['explanation']);
             tada.play();
             score++;
         } else {
             $('#answers-box .field-row').eq(choice).addClass('incorrect');
-            $('#explanation').text(quiz[currentQuestion]['explanation']);
             chord.play();
         }
+        $('#explanation').html(quiz[currentQuestion]['explanation'] + `<br/><a target="_blank" href=${quiz[currentQuestion]['source']}>Grafika oryginalna</a>`);
         currentQuestion++;
 
         $('#submitbutton').html(currentQuestion !== quiz.length ? "Kolejne pytanie &raquo;" : 'Zakończ quiz').on('click', function () {
