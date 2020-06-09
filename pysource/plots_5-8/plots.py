@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+sns.set_style('whitegrid')
+
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
 X = np.arange(2011, 2021)
@@ -10,15 +12,14 @@ Y1 = np.arange(0, 1400001, 1400000 / (len(X) - 1), dtype=int)
 Y2 = np.arange(0, 400001, 400000 / (len(X) - 1), dtype=int)
 title = 'The High Demand For Technical Talent'
 labels = ['400000 \nComputer Science Students',
-        '1,4 Milion \nComputing Jobs']
+        '1,4 miliona \nComputing Jobs']
 
 # incorrecy plot
 fig, ax = plt.subplots()
 ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'gold'])
 ax.ticklabel_format(axis='y', style='plain')
-ax.set_facecolor('gray')
 ax.set_axisbelow(True)
-ax.yaxis.grid(color='white')
+ax.xaxis.grid(False)
 ax.yaxis.tick_right()
 ax.text(x = X[Y2.argmax()] - 0.3, y = 0.20 * Y2[Y2.argmax()], s = labels[0], 
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
@@ -34,11 +35,10 @@ plt.show()
 fig, ax = plt.subplots()
 ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'gold'])
 ax.ticklabel_format(axis='y', style='plain')
-ax.set_facecolor('gray')
 ax.set_axisbelow(True)
-ax.yaxis.grid(color='white')
+ax.xaxis.grid(False)
 ax.yaxis.tick_right()
-ax.text(x = X[Y2.argmax()] - 5.3, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
+ax.text(x = X[Y2.argmax()] - 4, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
 ax.text(x = X[Y2.argmax()] - 3, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
         fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
@@ -47,17 +47,16 @@ plt.xticks(X)
 plt.savefig('plot_5_correct.svg')
 plt.show()
 
-
 # WYKRES 6 - niepoprawne kolory - Shoe color frequency
-
 X = np.array(['White', 'Blue', 'Yellow', 'Black', 'Red', 'Grey', 'Brown'])
 Y = np.array([6, 2, 3, 12, 1, 5, 1])
+data = pd.DataFrame({'X' : X, 'Y' : Y})
 title = 'Shoe color frequency'
 
 # incorrect plot
 Colors = np.array(['red', 'black', 'grey', 'blue', 'brown', 'white', 'yellow'])
 fig, ax = plt.subplots()
-ax.bar(X, Y, color=Colors, edgecolor='black')
+ax.bar(data['X'], data['Y'], color=Colors, edgecolor='black')
 ax.set_xlabel('Color')
 ax.set_ylabel('Number')
 ax.set_axisbelow(True)
@@ -68,8 +67,10 @@ plt.show()
 
 # correct plot
 Colors = np.char.lower(X)
+data['Colors'] = Colors
+data = data.sort_values(by=['Y'], ascending=False)
 fig, ax = plt.subplots()
-ax.bar(X, Y, color=Colors, edgecolor='black')
+ax.bar(data['X'], data['Y'], color=data['Colors'], edgecolor='black')
 ax.set_xlabel('Color')
 ax.set_ylabel('Number')
 ax.set_axisbelow(True)
@@ -77,7 +78,6 @@ ax.yaxis.grid(color='grey')
 ax.set_title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.savefig('plot_6_correct.svg')
 plt.show()
-
 
 # WYKRES 7 - różne sklale na osiach Y - 
 
@@ -129,7 +129,8 @@ plt.title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.xticks(np.arange(1996, 2010))
 plt.yticks(Y_ticks, ['$' + str(x) + 'M' for x in Y_ticks])
 for x, y, z, in zip(X, Y, Z):
-    plt.text(x - 0.3, y - 0.3, '$' + str(z) + 'B', fontdict={'fontsize' : 10, 'fontweight' : 'bold', 'color' : 'black'} )
+    lab = '$' + str(z) + 'B'
+    plt.text(x - (len(lab) / 20), y - 0.5, lab, fontdict={'fontsize' : 10, 'fontweight' : 'bold', 'color' : 'black'} )
 plt.ylabel('Production Budget')
 plt.grid(True)
 plt.savefig('plot_8_correct.svg')
