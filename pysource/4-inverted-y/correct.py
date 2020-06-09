@@ -63,7 +63,6 @@ plt.suptitle(' '.join([to_bold(x) for x in 'Gun deaths in Florida'.split(' ')]),
 plt.title('Number of murders commited using firearms', fontsize=10)
 
 plt.savefig('correct.png', dpi = 150,
-            bbox_inches = 'tight',
-            transparent = True)
+            bbox_inches = 'tight')
 
 # %%

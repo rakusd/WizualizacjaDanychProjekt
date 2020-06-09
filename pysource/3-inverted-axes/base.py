@@ -27,7 +27,6 @@ plt.xlabel('Time [hours]')
 plt.ylabel('Number of crafters')
 
 plt.savefig('base.png', dpi = 150,
-            bbox_inches = 'tight',
-            transparent = True)
+            bbox_inches = 'tight')
 
 # %%

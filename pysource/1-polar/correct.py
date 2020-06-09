@@ -25,7 +25,6 @@ for index, row in df.iterrows():
     g.text(row.name, row.expectancy+0.5, str(row.expectancy)+' yrs', color='black', ha="center")
 
 plt.savefig('correct.png', dpi = 150,
-            bbox_inches = 'tight',
-            transparent = True)
+            bbox_inches = 'tight')
 
 # %%

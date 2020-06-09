@@ -20,7 +20,7 @@ def func(pct, labels, vals):
     # Returns absolute value against the default percentage
     # absolute = int(pct/100.*np.sum(vals))
     # Combine labels and values
-    return f"{df.percentage[MyClass.i]}%\n{df.date[MyClass.i]}%"
+    return f"{df.percentage[MyClass.i]}%\n{df.date[MyClass.i]}"
 
 
 fig1, ax1 = plt.subplots()
@@ -33,7 +33,6 @@ ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.title('AMERICANS WHO HAVE TRIED MARIJUANA')
 plt.text(0.6, -1.2, 'Source: MOE +/- 4%')
 plt.savefig('base.png', dpi = 150,
-            bbox_inches = 'tight',
-            transparent = True)
+            bbox_inches = 'tight')
 
 # %%
