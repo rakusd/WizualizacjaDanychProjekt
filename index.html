@@ -3,70 +3,105 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
     <script src="index.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/98.css"/>
     <link rel="icon" href="images/favicon.png"/>
     <title>Wizualizacja danych 1998</title>
 </head>
 <html lang="pl">
-<div id="frame" role="content">
-    <div class="body">
-        <div class="main-window-container">
-            <div class="window main-window">
-                <div class="title-bar">
-                    <div class="title-bar-text" id="questionCounter"></div>
-                    <div class="title-bar-controls">
-                        <button aria-label="Minimize"></button>
-                        <button aria-label="Maximize"></button>
-                        <button aria-label="Close"></button>
+    <body class='not-logged'>
+        <div id="frame" role="content">
+            <div class="body">
+                <div id='login-window' class="main-window-container">
+                    <div class="window main-window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Wizualizacja danych</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Help"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <div class='row'>
+                                <div class='col-3'>
+                                    <img src='images/loginicon.png'>
+                                </div>
+                                <div class='col-6'>
+                                    <p>Podaj nazwę użytkownika oraz hasło, by wziąć udział w quizie.</p>
+                                    <div class="field-row login-field">
+                                        <label><u>N</u>azwa użytkownika: </label>
+                                        <input class='black' type="text" disabled value='michbur'/>
+                                    </div>
+                                    <div class="field-row login-field">
+                                        <label><u>H</u>asło: </label>
+                                        <input class='black' type="text" disabled value='*********'/>
+                                    </div>
+                                </div>
+                                <div class='col-3 flex-column d-flex'>
+                                    <button id='login-button' class='mt-5'>Ok</button>
+                                    <button class='mt-5'>Cofnij</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="window-body">
-                    <h4 id="question"></h4>
-                        <div id="imagesDiv" class="field-row">
-                            <fieldset>
-                                <legend class="image-legend hidden">kijowy wykres bo rakus go rysował</legend>
-                                <div class="image-container">
-                                    <img id="questionImage"/>
-                                </div>
-                            </fieldset>
-                            <fieldset>
-                                <legend class="image-legend hidden">Poprawny wykres</legend>
-                                <div class="image-container">
-                                    <img id="correctImage"/>
-                                </div>
-                            </fieldset>
+                <div id='quiz-window'class="main-window-container" hidden>
+                    <div class="window main-window">
+                        <div class="title-bar">
+                            <div class="title-bar-text" id="questionCounter"></div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
                         </div>
-                        <fieldset id="explanation-box" class="groupbox-margin">
-                            <legend>Wyjaśnienie</legend>
-                            <p id="explanation"></p>
-                        </fieldset>
-                        <fieldset id="answers-box" class="groupbox-margin">
-                            <legend>Wybierz odpowiedź</legend>
-                            <div class="field-row">
-                                <input id="answer0" type="radio" name="answers" value="0">
-                                <label for="answer0"></label>
-                            </div>
-                            <div class="field-row">
-                                <input id="answer1" type="radio" name="answers" value="1">
-                                <label for="answer1"></label>
-                            </div>
-                            <div class="field-row">
-                                <input id="answer2" type="radio" name="answers" value="2">
-                                <label for="answer2"></label>
-                            </div>
-                            <div class="field-row">
-                                <input id="answer3" type="radio" name="answers" value="3">
-                                <label for="answer3"></label>
-                            </div>
-                        </fieldset>
-                        <div class="submit-div field-row">
-                            <button id="submitbutton" disabled></button>
+                        <div class="window-body">
+                            <h4 id="question"></h4>
+                                <div id="imagesDiv" class="field-row">
+                                    <fieldset>
+                                        <legend class="image-legend hidden">Niepoprawny wykres</legend>
+                                        <div class="image-container">
+                                            <img id="questionImage"/>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend class="image-legend hidden">Poprawny wykres</legend>
+                                        <div class="image-container">
+                                            <img id="correctImage"/>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <fieldset id="explanation-box" class="groupbox-margin">
+                                    <legend>Wyjaśnienie</legend>
+                                    <p id="explanation"></p>
+                                </fieldset>
+                                <fieldset id="answers-box" class="groupbox-margin">
+                                    <legend>Wybierz odpowiedź</legend>
+                                    <div class="field-row">
+                                        <input id="answer0" type="radio" name="answers" value="0">
+                                        <label for="answer0"></label>
+                                    </div>
+                                    <div class="field-row">
+                                        <input id="answer1" type="radio" name="answers" value="1">
+                                        <label for="answer1"></label>
+                                    </div>
+                                    <div class="field-row">
+                                        <input id="answer2" type="radio" name="answers" value="2">
+                                        <label for="answer2"></label>
+                                    </div>
+                                    <div class="field-row">
+                                        <input id="answer3" type="radio" name="answers" value="3">
+                                        <label for="answer3"></label>
+                                    </div>
+                                </fieldset>
+                                <div class="submit-div field-row">
+                                    <button id="submitbutton" disabled></button>
+                                </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
-</div>
+    </body>
 </html>

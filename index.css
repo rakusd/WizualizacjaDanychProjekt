@@ -1,11 +1,81 @@
+button {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+    min-width: 75px;
+    min-height: 23px;
+    padding: 0 12px;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.mt-5 {
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 5px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
 .main-window {
     width: 95%;
     margin: 32px auto auto;
     max-width: 1200px;
 }
 
+#login-window {
+    max-width: 600px;
+    margin: 100px auto auto;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+    
+body.logged {
+    background-image: url('images/win98background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+body.not-logged {
+    background-color: #00807F;
+}
+
 h4 {
     margin: 0.5em 0;
+}
+
+.black {
+    color: black !important;
+    float: right;
+}
+
+.login-field {
+    display: flex;
+    justify-content: space-between;
 }
 
 #question {

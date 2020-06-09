@@ -6,9 +6,9 @@ $(document).ready(function () {
             "goodImage": "https://download.komputerswiat.pl/media/2017/81/3109893/graph-program-do-rysowania-wykresow-matematycznych.jpg",
             "choices": [
                 "xd",
-                "rakus",
+                "test",
                 "to",
-                "pała"
+                "Good"
             ],
             "correct": "Good",
             "explanation": "Wzrosła aż 5 krotnie",
@@ -59,6 +59,9 @@ $(document).ready(function () {
 
         addChoices(quiz[currentQuestion]['choices']);
         setupRadioButtons();
+        $('input[type=radio]').each(function() {
+            this.disabled=false;
+        });
     }
 
     function processQuestion(choice) {
@@ -85,6 +88,10 @@ $(document).ready(function () {
                 nextQuestion();
             }
         })
+
+        $('input[type=radio]').each(function() {
+            this.disabled=true;
+        });
     }
 
     function setupRadioButtons() {
@@ -119,12 +126,17 @@ $(document).ready(function () {
 
     function init() {
         startup = new Audio('audio/startup.mp3');
-        startup.play();
         chord = new Audio('audio/chord.mp3');
         tada = new Audio('audio/tada.mp3');
         shutdown = new Audio('audio/shutdown.mp3');
         nextQuestion();
 
+        $('#login-button').click(function() {
+            $('#login-window').hide();
+            $('#quiz-window').removeAttr('hidden');
+            $('body').removeClass('not-logged').addClass('logged');
+            startup.play();
+        });
     }
 
     init();
