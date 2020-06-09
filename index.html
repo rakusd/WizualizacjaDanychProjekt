@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="index.js"></script>
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
-    <!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://unpkg.com/98.css"/>
+    <link rel="icon" href="images/favicon.png"/>
+    <title>Wizualizacja danych 1998</title>
 </head>
 <html lang="pl">
 <div id="frame" role="content">
@@ -22,40 +22,47 @@
                     </div>
                 </div>
                 <div class="window-body">
-                    <h3 id="question"></h3>
-                    <div id="imagesDiv" class="field-row">
-                        <fieldset>
-                            <legend class="image-legend hidden">kijowy wykres bo rakus go rysował</legend>
-                            <img id="questionImage"/>
+                    <h4 id="question"></h4>
+                        <div id="imagesDiv" class="field-row">
+                            <fieldset>
+                                <legend class="image-legend hidden">kijowy wykres bo rakus go rysował</legend>
+                                <div class="image-container">
+                                    <img id="questionImage"/>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="image-legend hidden">Poprawny wykres</legend>
+                                <div class="image-container">
+                                    <img id="correctImage"/>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <fieldset id="explanation-box" class="groupbox-margin">
+                            <legend>Wyjaśnienie</legend>
+                            <p id="explanation"></p>
                         </fieldset>
-                        <fieldset>
-                            <legend class="image-legend hidden">Poprawny wykres</legend>
-                            <img id="correctImage"/>
+                        <fieldset id="answers-box" class="groupbox-margin">
+                            <legend>Wybierz odpowiedź</legend>
+                            <div class="field-row">
+                                <input id="answer0" type="radio" name="answers" value="0">
+                                <label for="answer0"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer1" type="radio" name="answers" value="1">
+                                <label for="answer1"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer2" type="radio" name="answers" value="2">
+                                <label for="answer2"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer3" type="radio" name="answers" value="3">
+                                <label for="answer3"></label>
+                            </div>
                         </fieldset>
-                    </div>
-                    <p id="explanation"></p>
-                    <fieldset id="answers-box">
-                        <legend>Wybierz odpowiedź</legend>
-                        <div class="field-row">
-                            <input id="answer0" type="radio" name="answers" value="0">
-                            <label for="answer0"></label>
+                        <div class="submit-div field-row">
+                            <button id="submitbutton" disabled></button>
                         </div>
-                        <div class="field-row">
-                            <input id="answer1" type="radio" name="answers" value="1">
-                            <label for="answer1"></label>
-                        </div>
-                        <div class="field-row">
-                            <input id="answer2" type="radio" name="answers" value="2">
-                            <label for="answer2"></label>
-                        </div>
-                        <div class="field-row">
-                            <input id="answer3" type="radio" name="answers" value="3">
-                            <label for="answer3"></label>
-                        </div>
-                    </fieldset>
-                    <div class="submit-div field-row">
-                        <button id="submitbutton" disabled></button>
-                    </div>
                 </div>
             </div>
         </div>

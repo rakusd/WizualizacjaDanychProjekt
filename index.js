@@ -30,7 +30,11 @@ $(document).ready(function () {
     let currentQuestion = 0,
         score = 0,
         submit = true,
-        picked;
+        picked,
+        chord,
+        tada,
+        shutdown,
+        startup;
 
     function addChoices(choices) {
         for (var i = 0; i < choices.length; i++) {
@@ -40,7 +44,7 @@ $(document).ready(function () {
 
     function nextQuestion() {
         submit = true;
-        $('#explanation').empty();
+        $('#explanation-box').addClass('collapsed');
         $('#question').text(quiz[currentQuestion]['question']);
         $('#questionCounter').text('Pytanie ' + Number(currentQuestion + 1) + ' z ' + quiz.length);
         $('#questionImage').attr('src', quiz[currentQuestion]['image']);
@@ -60,13 +64,17 @@ $(document).ready(function () {
     function processQuestion(choice) {
         $('.image-legend').removeClass('hidden');
         $('#correctImage').removeClass('hidden');
+        $('#explanation-box').removeClass('collapsed');
+
         if (quiz[currentQuestion]['choices'][choice] === quiz[currentQuestion]['correct']) {
             $('#answers-box .field-row').eq(choice).addClass('correct');
             $('#explanation').text('Super! ' + quiz[currentQuestion]['explanation']);
+            tada.play();
             score++;
         } else {
             $('#answers-box .field-row').eq(choice).addClass('incorrect');
             $('#explanation').text('Źle! ' + quiz[currentQuestion]['explanation']);
+            chord.play();
         }
         currentQuestion++;
 
@@ -96,7 +104,7 @@ $(document).ready(function () {
     }
 
     function endQuiz() {
-        $('#explanation').empty();
+        $('#explanation-box').addClass('collapsed');
         $('#answers-box').remove();
         $('#imagesDiv').remove();
         $('#submitbutton').remove();
@@ -106,10 +114,17 @@ $(document).ready(function () {
             'text-align': 'center',
             'font-size': '4em'
         }).text(Math.round(score / quiz.length * 100) + '%').insertAfter('#question');
+        shutdown.play();
     }
 
     function init() {
+        startup = new Audio('audio/startup.mp3');
+        startup.play();
+        chord = new Audio('audio/chord.mp3');
+        tada = new Audio('audio/tada.mp3');
+        shutdown = new Audio('audio/shutdown.mp3');
         nextQuestion();
+
     }
 
     init();
