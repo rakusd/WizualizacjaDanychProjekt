@@ -59,8 +59,8 @@ $(document).ready(function () {
         },
         {
             "question": "Jak zmieniało się w ostatnich latach zapotrzebowanie na stanowiska techniczne?",
-            "image": "images/img5_incorrect.png",
-            "goodImage": "images/img5_correct.png",
+            "image": "images/img5_incorrect.svg",
+            "goodImage": "images/img5_correct.svg",
             "choices": [
                 "Rosło",
                 "Malało",
@@ -72,8 +72,8 @@ $(document).ready(function () {
         },
         {
             "question": "Jaki jest najpopularniejszy kolor butów?",
-            "image": "images/img6_inorrect.png",
-            "goodImage": "images/img6_correct.png",
+            "image": "images/img6_inorrect.svg",
+            "goodImage": "images/img6_correct.svg",
             "choices": [
                 "Biały",
                 "Niebieski",
@@ -86,8 +86,8 @@ $(document).ready(function () {
         },
         {
             "question": "Na końcu przedziału widocznego wartość zysku była w stosunku do wartości sprzedaży...",
-            "image": "images/img7_incorrect.png",
-            "goodImage": "images/img7_correct.png",
+            "image": "images/img7_incorrect.svg",
+            "goodImage": "images/img7_correct.svg",
             "choices": [
                 "... zdecydowanie większa",
                 "... zdecydowanie mniejsza",
