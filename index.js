@@ -33,7 +33,8 @@ $(document).ready(function () {
         picked,
         chord,
         tada,
-        shutdown;
+        shutdown,
+        startup;
 
     function addChoices(choices) {
         for (var i = 0; i < choices.length; i++) {
@@ -117,10 +118,13 @@ $(document).ready(function () {
     }
 
     function init() {
-        nextQuestion();
+        startup = new Audio('audio/startup.mp3');
+        startup.play();
         chord = new Audio('audio/chord.mp3');
         tada = new Audio('audio/tada.mp3');
         shutdown = new Audio('audio/shutdown.mp3');
+        nextQuestion();
+
     }
 
     init();
