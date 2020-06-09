@@ -16,7 +16,7 @@ labels = ['400000 \nComputer Science Students',
 
 # incorrecy plot
 fig, ax = plt.subplots()
-ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'gold'])
+ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'goldenrod'])
 ax.ticklabel_format(axis='y', style='plain')
 ax.set_axisbelow(True)
 ax.xaxis.grid(False)
@@ -33,7 +33,7 @@ plt.show()
 
 # correct plot
 fig, ax = plt.subplots()
-ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'gold'])
+ax.stackplot(X, Y2, Y1 - Y2, labels=labels, colors=['purple', 'goldenrod'])
 ax.ticklabel_format(axis='y', style='plain')
 ax.set_axisbelow(True)
 ax.xaxis.grid(False)
