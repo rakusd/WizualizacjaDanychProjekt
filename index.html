@@ -21,39 +21,46 @@
                 </div>
                 <div class="window-body">
                     <h4 id="question"></h4>
-                    <div id="imagesDiv" class="field-row">
-                        <fieldset>
-                            <legend class="image-legend hidden">kijowy wykres bo rakus go rysował</legend>
-                            <img id="questionImage"/>
+                        <div id="imagesDiv" class="field-row">
+                            <fieldset>
+                                <legend class="image-legend hidden">kijowy wykres bo rakus go rysował</legend>
+                                <div class="image-container">
+                                    <img id="questionImage"/>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="image-legend hidden">Poprawny wykres</legend>
+                                <div class="image-container">
+                                    <img id="correctImage"/>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <fieldset id="explanation-box" class="groupbox-margin">
+                            <legend>Wyjaśnienie</legend>
+                            <p id="explanation"></p>
                         </fieldset>
-                        <fieldset>
-                            <legend class="image-legend hidden">Poprawny wykres</legend>
-                            <img id="correctImage"/>
+                        <fieldset id="answers-box" class="groupbox-margin">
+                            <legend>Wybierz odpowiedź</legend>
+                            <div class="field-row">
+                                <input id="answer0" type="radio" name="answers" value="0">
+                                <label for="answer0"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer1" type="radio" name="answers" value="1">
+                                <label for="answer1"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer2" type="radio" name="answers" value="2">
+                                <label for="answer2"></label>
+                            </div>
+                            <div class="field-row">
+                                <input id="answer3" type="radio" name="answers" value="3">
+                                <label for="answer3"></label>
+                            </div>
                         </fieldset>
-                    </div>
-                    <p id="explanation"></p>
-                    <fieldset id="answers-box">
-                        <legend>Wybierz odpowiedź</legend>
-                        <div class="field-row">
-                            <input id="answer0" type="radio" name="answers" value="0">
-                            <label for="answer0"></label>
+                        <div class="submit-div field-row">
+                            <button id="submitbutton" disabled></button>
                         </div>
-                        <div class="field-row">
-                            <input id="answer1" type="radio" name="answers" value="1">
-                            <label for="answer1"></label>
-                        </div>
-                        <div class="field-row">
-                            <input id="answer2" type="radio" name="answers" value="2">
-                            <label for="answer2"></label>
-                        </div>
-                        <div class="field-row">
-                            <input id="answer3" type="radio" name="answers" value="3">
-                            <label for="answer3"></label>
-                        </div>
-                    </fieldset>
-                    <div class="submit-div field-row">
-                        <button id="submitbutton" disabled></button>
-                    </div>
                 </div>
             </div>
         </div>

@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     function nextQuestion() {
         submit = true;
-        $('#explanation').empty();
+        $('#explanation-box').addClass('collapsed');
         $('#question').text(quiz[currentQuestion]['question']);
         $('#questionCounter').text('Pytanie ' + Number(currentQuestion + 1) + ' z ' + quiz.length);
         $('#questionImage').attr('src', quiz[currentQuestion]['image']);
@@ -63,6 +63,8 @@ $(document).ready(function () {
     function processQuestion(choice) {
         $('.image-legend').removeClass('hidden');
         $('#correctImage').removeClass('hidden');
+        $('#explanation-box').removeClass('collapsed');
+
         if (quiz[currentQuestion]['choices'][choice] === quiz[currentQuestion]['correct']) {
             $('#answers-box .field-row').eq(choice).addClass('correct');
             $('#explanation').text('Super! ' + quiz[currentQuestion]['explanation']);
@@ -101,7 +103,7 @@ $(document).ready(function () {
     }
 
     function endQuiz() {
-        $('#explanation').empty();
+        $('#explanation-box').addClass('collapsed');
         $('#answers-box').remove();
         $('#imagesDiv').remove();
         $('#submitbutton').remove();
