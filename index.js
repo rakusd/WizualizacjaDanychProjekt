@@ -110,7 +110,7 @@ $(document).ready(function () {
         },
         {
             "question": "O ile procent większy jest plon ziarna pszenicy typu APOSTEL od plonu ziarna pszenicy typu Formacja?",
-            "image": "images/img8_incorrect.png",
+            "image": "images/img8_incorrect.jpg",
             "goodImage": "images/img8_correct.png",
             "choices": [
                 "250%",
@@ -121,7 +121,7 @@ $(document).ready(function () {
             "correctIndex": 3,
             "explanation": "Plon ziarna pszenicy typu APOSTEL jest większy od plonu ziarna pszenicy typu Formacja o 5 punktów procentowych, a także o 5%. " +
                 "Błąd wizualizacji polega na wykorzystaniu utrudniającego odczytanie danych wizerunku kłosa oraz osi Y nie zaczynającej się w zerze.",
-            "source": ""
+            "source": "http://smarterpoland.pl/index.php/2019/12/najgorszy-wykres-2019/"
         },
         {
             "question": "Jaki procent ludności odpowiedziało “Zdecydowanie nie” na pytanie ankietowe?",
@@ -135,7 +135,7 @@ $(document).ready(function () {
             ],
             "correctIndex": 3,
             "explanation": "Prawidłowa odpowiedź to 29%. Błąd wizualizacji polega na nałożeniu koperty na wykres kołowy oraz zachowaniu proporcji względem kąta, a nie powierzchni, co jest kontrintuicyjne.",
-            "source": ""
+            "source": "http://smarterpoland.pl/index.php/2019/12/najgorszy-wykres-2019/"
         },
         {
             "question": "Czy podwyżka wynagrodzeń nauczycieli w roku 2020 jest wyższa niż w roku 2019?",
@@ -148,7 +148,7 @@ $(document).ready(function () {
             "correctIndex": 1,
             "explanation": "Prawidłowa odpowiedź brzmi nie, ponieważ podwyżka wynagrodzeń w 2020 r. wynosi 1,4 mld zł. " +
                 "Błąd, a raczej prawdopodobnie celowa dezinformacja, polega na zmianie formy ostatniego słupka – reprezentuje on sumaryczną podwyżkę z lat 2017-2020.",
-            "source": ""
+            "source": "https://twitter.com/men_gov_pl/status/1109050109785001985"
         }
     ];
     let currentQuestion = 0,
