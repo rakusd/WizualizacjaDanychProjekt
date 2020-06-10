@@ -206,7 +206,7 @@ $(document).ready(function () {
             } else {
                 nextQuestion();
             }
-        })
+        });
 
         $('input[type=radio]').each(function() {
             this.disabled=true;
