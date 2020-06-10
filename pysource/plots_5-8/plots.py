@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 sns.set_style('whitegrid')
-
+"""
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
 X = np.arange(2011, 2021)
@@ -79,7 +79,7 @@ ax.set_title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.savefig('img6_correct.svg')
 plt.show()
 
-
+"""
 # WYKRES 7 - różne sklale na osiach Y - 
 X = np.arange(1, 37)
 
@@ -92,8 +92,8 @@ print(len(Y_profit))
 # Incorrect plot
 fig, ax1 = plt.subplots(figsize=(8, 4))
 
-ax1.set_xlabel('Months of Order Date')
-ax1.set_ylabel('Sales')
+ax1.set_xlabel('Months of Order Date', {'fontsize' : 12})
+ax1.set_ylabel('Sales', {'fontsize' : 12})
 ls = ax1.plot(X, Y_sale, color='green', label='Sales')
 ax1.ticklabel_format(axis='y', style='plain')
 ax1.set_ylim([0, 400000])
@@ -101,7 +101,7 @@ ax1.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
 ax1.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
 
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-ax2.set_ylabel('Profit')  # we already handled the x-label with ax1
+ax2.set_ylabel('Profit', {'fontsize' : 12})  # we already handled the x-label with ax1
 lp = ax2.plot(X, Y_profit, color='blue', label='Profit')
 ax2.ticklabel_format(axis='y', style='plain')
 ax2.set_ylim([0, 100000])
@@ -122,8 +122,8 @@ plt.show()
 # correct plot
 fig, ax1 = plt.subplots(figsize=(8, 4))
 
-ax1.set_xlabel('Months of Order Date')
-ax1.set_ylabel('Sales')
+ax1.set_xlabel('Months of Order Date', {'fontsize' : 12})
+ax1.set_ylabel('Sales', {'fontsize' : 12})
 ls = ax1.plot(X, Y_sale, color='green', label='Sales')
 ax1.set_ylim([0, 400000])
 ax1.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
@@ -131,7 +131,7 @@ ax1.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
 
 ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 lp = ax2.plot(X, Y_profit, color='blue', label='Profit')
-ax2.set_ylabel('Profit')
+ax2.set_ylabel('Profit', {'fontsize' : 12})
 ax2.set_ylim([0, 400000])
 ax2.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
 ax2.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
@@ -147,7 +147,7 @@ plt.savefig('img7_correct.png')
 plt.savefig('img7_correct.svg')
 plt.show()
 
-
+"""
 # WYKRES 8 - nieadekwatne stosunki pól do wartości etykiet
 X = [1997, 1999, 2001, 2002, 2003, 2004, 2006, 2007, 2007, 2008]
 Y = [200, 115, 125, 94, 94, 150, 225, 300, 150, 185]
@@ -198,3 +198,4 @@ plt.ylabel('Production Budget')
 plt.grid(True)
 plt.savefig('img8_correct.svg')
 plt.show()
+"""
