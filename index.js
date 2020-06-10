@@ -72,7 +72,7 @@ $(document).ready(function () {
         },
         {
             "question": "Jaki jest najpopularniejszy kolor butów?",
-            "image": "images/img6_inorrect.svg",
+            "image": "images/img6_incorrect.svg",
             "goodImage": "images/img6_correct.svg",
             "choices": [
                 "Biały",
