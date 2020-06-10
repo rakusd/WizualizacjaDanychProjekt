@@ -44,12 +44,12 @@ df
 
 # %%
 sns.set_style('whitegrid')
-plt.plot(df.date, df.percentage)
+# plt.plot(df.date, df.percentage)
 plt.scatter(df.date, df.percentage)
 
 plt.ylabel('Percentage')
 
-minor = np.arange(1997, 2020, step = 1)
+minor = np.arange(1995, 2020, step = 1)
 ax = plt.gca()
 ax.set_xticks(minor, minor = True)
 ax.tick_params(which='minor', length=10, color='r')
