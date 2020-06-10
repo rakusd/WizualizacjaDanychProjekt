@@ -199,7 +199,7 @@ $(document).ready(function () {
             $('#answers-box .field-row').eq(choice).addClass('incorrect');
             chord.play();
         }
-        $('#explanation').html(quiz[currentQuestion]['explanation'] + `<br/><a target="_blank" href=${quiz[currentQuestion]['source']}>Grafika oryginalna</a>`);
+        $('#explanation').html(quiz[currentQuestion]['explanation'] + `<br/><a target="_blank" href="${quiz[currentQuestion]['source']}">Grafika oryginalna</a>`);
         currentQuestion++;
 
         $('#submitbutton').html(currentQuestion !== quiz.length ? "Kolejne pytanie &raquo;" : 'Zakończ quiz').on('click', function () {
