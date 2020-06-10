@@ -5,12 +5,12 @@ $(document).ready(function () {
             "image": "images/img1_incorrect.png",
             "goodImage": "images/img1_correct.png",
             "choices": [
-                "Nie wiadomo",
                 "60 lat",
                 "68 lat",
-                "70 lat"
+                "70 lat",
+                "Nie da się tego stwierdzić"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "explanation": "Poprawna odpowiedź to “nie wiadomo”, gdyż długość życia została zbadana tylko dla roku 1955 oraz 2015. Wartości pomiędzy nimi są jedynie liniową interpolacją, która jest trudna do identyfikacji na wykresie biegunowym. Prawidłowy wykres powinien przedstawiać tylko wartości obserwacji. Dodatkowo, na niepoprawnym wykresie mamy do czynienia z uciętą osią Y/r (zaczyna się ona od 40 lat), co wyolbrzymia różnicę.",
             "source": "https://i.redd.it/n3nc8r2qql811.png"
         },
