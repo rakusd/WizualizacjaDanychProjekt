@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 sns.set_style('whitegrid')
-"""
+
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
 X = np.arange(2011, 2021)
@@ -79,7 +79,6 @@ ax.set_title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.savefig('img6_correct.svg')
 plt.show()
 
-"""
 # WYKRES 7 - różne sklale na osiach Y - 
 X = np.arange(1, 37)
 
@@ -147,7 +146,7 @@ plt.savefig('img7_correct.png')
 plt.savefig('img7_correct.svg')
 plt.show()
 
-"""
+
 # WYKRES 8 - nieadekwatne stosunki pól do wartości etykiet
 X = [1997, 1999, 2001, 2002, 2003, 2004, 2006, 2007, 2007, 2008]
 Y = [200, 115, 125, 94, 94, 150, 225, 300, 150, 185]
@@ -198,4 +197,3 @@ plt.ylabel('Production Budget')
 plt.grid(True)
 plt.savefig('img8_correct.svg')
 plt.show()
-"""
