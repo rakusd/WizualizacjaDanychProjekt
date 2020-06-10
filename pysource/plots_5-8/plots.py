@@ -5,7 +5,6 @@ import seaborn as sns
 
 sns.set_style('whitegrid')
 
-
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
 X = np.arange(2011, 2021)
@@ -82,12 +81,13 @@ plt.show()
 
 
 # WYKRES 7 - różne sklale na osiach Y - 
-X = np.arange(1, 61)
+X = np.arange(1, 37)
 
 np.random.seed(223)
-Y_sale = np.random.exponential(2, (60)) * 40000
-Y_profit = np.random.exponential(2, (60)) * 10000
-Y_sale[59] = 100000
+Y_sale = np.random.exponential(2, (36)) * 40000
+Y_profit = np.random.exponential(2, (36)) * 10000
+Y_profit[35] = 48000
+print(len(Y_profit))
 
 # Incorrect plot
 fig, ax1 = plt.subplots(figsize=(12, 4))
@@ -109,7 +109,7 @@ ax2.yaxis.set_ticks([0, 25000, 50000, 75000, 100000])
 ax2.set_yticklabels(['$0', '$25 000', '$50 000', '$75 000', '$100 000'])
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+plt.xticks([6, 18, 30], ['2010', '2011', '2012'])
 
 lns = ls+lp
 labs = [l.get_label() for l in lns]
@@ -137,7 +137,7 @@ ax2.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
 ax2.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+plt.xticks([6, 18, 30], ['2010', '2011', '2012'])
 
 lns = ls+lp
 labs = [l.get_label() for l in lns]
