@@ -10,10 +10,14 @@
     <title>Wizualizacja danych 1998</title>
 </head>
 <html lang="pl">
-    <body class='not-logged'>
+    <body class="not-logged">
+        <img src="images/bg_topleft.png" class="bg-image" style="top: 0; left: 0;">
+        <img src="images/bg_start.png" class="bg-image" style="bottom: 0; left: 0;">
+        <img src="images/bg_bottomright.png" class="bg-image" style="bottom: 0; right: 0;">
+        <img src="images/bg_bottom.png" class="bg-image" style="bottom: 0; width: 100%; height: max-content; z-index: -20;">
         <div id="frame" role="content">
             <div class="body">
-                <div id='login-window' class="main-window-container">
+                <div id="login-window" class="main-window-container">
                     <div class="window main-window">
                         <div class="title-bar">
                             <div class="title-bar-text">Wizualizacja danych</div>
@@ -23,30 +27,30 @@
                             </div>
                         </div>
                         <div class="window-body">
-                            <div class='row'>
-                                <div class='col-3'>
-                                    <img src='images/loginicon.png'>
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="images/loginicon.png">
                                 </div>
-                                <div class='col-6'>
+                                <div class="col-8">
                                     <p>Podaj nazwę użytkownika oraz hasło, by wziąć udział w quizie.</p>
                                     <div class="field-row login-field">
                                         <label><u>N</u>azwa użytkownika: </label>
-                                        <input class='black' type="text" disabled value='michbur'/>
+                                        <input class="black" type="text" disabled value="michbur"/>
                                     </div>
                                     <div class="field-row login-field">
                                         <label><u>H</u>asło: </label>
-                                        <input class='black' type="text" disabled value='*********'/>
+                                        <input class="black" type="text" disabled value="*********"/>
                                     </div>
                                 </div>
-                                <div class='col-3 flex-column d-flex'>
-                                    <button id='login-button' class='mt-5'>Ok</button>
-                                    <button class='mt-5'>Cofnij</button>
+                                <div class="col-2 flex-column d-flex">
+                                    <button id="login-button" class="mt-5">Ok</button>
+                                    <button class="mt-5">Cofnij</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id='quiz-window'class="main-window-container" hidden>
+                <div id="quiz-window" class="main-window-container" hidden>
                     <div class="window main-window">
                         <div class="title-bar">
                             <div class="title-bar-text" id="questionCounter"></div>
