@@ -2,10 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.interpolate import interpolate
 
 sns.set_style('whitegrid')
-
 
 # WYKRES 5 - Odwrócona oś X - The High Demand For Technical Talent
 
@@ -14,7 +12,7 @@ Y1 = np.arange(0, 1400001, 1400000 / (len(X) - 1), dtype=int)
 Y2 = np.arange(0, 400001, 400000 / (len(X) - 1), dtype=int)
 title = 'The High Demand For Technical Talent'
 labels = ['400000 \nComputer Science Students',
-        '1,4 miliona \nComputing Jobs']
+        '1,4 Million \nComputing Jobs']
 
 # incorrecy plot
 fig, ax = plt.subplots()
@@ -40,10 +38,10 @@ ax.ticklabel_format(axis='y', style='plain')
 ax.set_axisbelow(True)
 ax.xaxis.grid(False)
 ax.yaxis.tick_right()
-ax.text(x = X[Y2.argmax()] - 4.8, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
-        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
-ax.text(x = X[Y2.argmax()] - 3, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
-        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
+ax.text(x = X[Y2.argmax()] - 0.5, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
+        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white', 'horizontalalignment' : 'right'})
+ax.text(x = X[Y2.argmax()] - 0.5, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
+        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white', 'horizontalalignment' : 'right'})
 plt.title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.xticks(X)
 plt.savefig('img5_correct.svg')
@@ -83,12 +81,13 @@ plt.show()
 
 
 # WYKRES 7 - różne sklale na osiach Y - 
-X = np.arange(1, 61)
+X = np.arange(1, 37)
 
 np.random.seed(223)
-Y_sale = np.random.exponential(2, (60)) * 40000
-Y_profit = np.random.exponential(2, (60)) * 10000
-Y_sale[59] = 100000
+Y_sale = np.random.exponential(2, (36)) * 40000
+Y_profit = np.random.exponential(2, (36)) * 10000
+Y_profit[35] = 48000
+print(len(Y_profit))
 
 # Incorrect plot
 fig, ax1 = plt.subplots(figsize=(12, 4))
@@ -110,7 +109,7 @@ ax2.yaxis.set_ticks([0, 25000, 50000, 75000, 100000])
 ax2.set_yticklabels(['$0', '$25 000', '$50 000', '$75 000', '$100 000'])
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+plt.xticks([6, 18, 30], ['2010', '2011', '2012'])
 
 lns = ls+lp
 labs = [l.get_label() for l in lns]
@@ -138,7 +137,7 @@ ax2.yaxis.set_ticks([0, 100000, 200000, 300000, 400000])
 ax2.set_yticklabels(['$0', '$100 000', '$200 000', '$300 000', '$400 000'])
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
-plt.xticks([6, 18, 30, 42, 54], ['2010', '2011', '2012', '2013', '2014'])
+plt.xticks([6, 18, 30], ['2010', '2011', '2012'])
 
 lns = ls+lp
 labs = [l.get_label() for l in lns]
