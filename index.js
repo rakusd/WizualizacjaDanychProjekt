@@ -164,6 +164,7 @@ $(document).ready(function () {
 
     function nextQuestion() {
         submit = true;
+        $('#correct-image-container').removeClass('white-background');
         $('#explanation-box').addClass('collapsed');
         $('#question').text(quiz[currentQuestion]['question']);
         $('#questionCounter').text('Pytanie ' + Number(currentQuestion + 1) + ' z ' + quiz.length);
@@ -188,6 +189,7 @@ $(document).ready(function () {
         $('.image-legend').removeClass('hidden');
         $('#correctImage').removeClass('hidden');
         $('#explanation-box').removeClass('collapsed');
+        $('#correct-image-container').addClass('white-background');
 
         if (parseInt(choice) === quiz[currentQuestion]['correctIndex']) {
             $('#answers-box .field-row').eq(choice).addClass('correct');
