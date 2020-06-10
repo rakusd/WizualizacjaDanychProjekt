@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.interpolate import interpolate
 
 sns.set_style('whitegrid')
 
@@ -14,7 +13,7 @@ Y1 = np.arange(0, 1400001, 1400000 / (len(X) - 1), dtype=int)
 Y2 = np.arange(0, 400001, 400000 / (len(X) - 1), dtype=int)
 title = 'The High Demand For Technical Talent'
 labels = ['400000 \nComputer Science Students',
-        '1,4 miliona \nComputing Jobs']
+        '1,4 Million \nComputing Jobs']
 
 # incorrecy plot
 fig, ax = plt.subplots()
@@ -40,10 +39,10 @@ ax.ticklabel_format(axis='y', style='plain')
 ax.set_axisbelow(True)
 ax.xaxis.grid(False)
 ax.yaxis.tick_right()
-ax.text(x = X[Y2.argmax()] - 4.8, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
-        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
-ax.text(x = X[Y2.argmax()] - 3, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
-        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white'})
+ax.text(x = X[Y2.argmax()] - 0.5, y = 0.05 * Y2[Y2.argmax()], s = labels[0], 
+        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white', 'horizontalalignment' : 'right'})
+ax.text(x = X[Y2.argmax()] - 0.5, y = 0.45 * Y1[Y1.argmax()], s = labels[1], 
+        fontdict={'fontsize' : 12, 'fontweight' : 'bold', 'color' : 'white', 'horizontalalignment' : 'right'})
 plt.title(title, fontdict={'fontsize' : 16, 'fontweight' : 'bold'})
 plt.xticks(X)
 plt.savefig('img5_correct.svg')
