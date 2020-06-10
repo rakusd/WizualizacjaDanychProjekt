@@ -90,7 +90,7 @@ Y_profit[35] = 48000
 print(len(Y_profit))
 
 # Incorrect plot
-fig, ax1 = plt.subplots(figsize=(12, 4))
+fig, ax1 = plt.subplots(figsize=(8, 4))
 
 ax1.set_xlabel('Months of Order Date')
 ax1.set_ylabel('Sales')
@@ -120,7 +120,7 @@ plt.savefig('img7_incorrect.svg')
 plt.show()
 
 # correct plot
-fig, ax1 = plt.subplots(figsize=(12, 4))
+fig, ax1 = plt.subplots(figsize=(8, 4))
 
 ax1.set_xlabel('Months of Order Date')
 ax1.set_ylabel('Sales')
