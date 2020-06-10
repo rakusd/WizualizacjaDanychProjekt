@@ -88,6 +88,7 @@ X = np.arange(1, 61)
 np.random.seed(223)
 Y_sale = np.random.exponential(2, (60)) * 40000
 Y_profit = np.random.exponential(2, (60)) * 10000
+Y_sale[59] = 100000
 
 # Incorrect plot
 fig, ax1 = plt.subplots(figsize=(12, 4))
@@ -115,6 +116,7 @@ lns = ls+lp
 labs = [l.get_label() for l in lns]
 ax1.legend(lns, labs, loc='upper left')
 
+plt.savefig('img7_incorrect.png')
 plt.savefig('img7_incorrect.svg')
 plt.show()
 
@@ -142,6 +144,7 @@ lns = ls+lp
 labs = [l.get_label() for l in lns]
 ax1.legend(lns, labs, loc='upper left')
 
+plt.savefig('img7_correct.png')
 plt.savefig('img7_correct.svg')
 plt.show()
 
