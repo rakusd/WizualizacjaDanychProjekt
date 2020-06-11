@@ -99,7 +99,7 @@ $(document).ready(function () {
         },
         {
             "question": "O ile procent większy jest plon ziarna pszenicy typu APOSTEL od plonu ziarna pszenicy typu Formacja?",
-            "image": "images/img8_incorrect.png",
+            "image": "images/img8_incorrect.jpg",
             "goodImage": "images/img8_correct.png",
             "choices": [
                 "250%",
