@@ -11,7 +11,10 @@ $(document).ready(function () {
                 "Nie da się tego stwierdzić"
             ],
             "correctIndex": 3,
-            "explanation": "Poprawna odpowiedź to “nie wiadomo”, gdyż długość życia została zbadana tylko dla roku 1955 oraz 2015. Wartości pomiędzy nimi są jedynie liniową interpolacją, która jest trudna do identyfikacji na wykresie biegunowym. Prawidłowy wykres powinien przedstawiać tylko wartości obserwacji. Dodatkowo, na niepoprawnym wykresie mamy do czynienia z uciętą osią Y/r (zaczyna się ona od 40 lat), co wyolbrzymia różnicę.",
+            "explanation": "Poprawna odpowiedź to ”nie wiadomo”, gdyż długość życia została zbadana tylko dla roku 1955 oraz 2015. " +
+                "Wartości pomiędzy nimi są jedynie liniową interpolacją, która jest trudna do identyfikacji na wykresie biegunowym. " +
+                "Prawidłowy wykres powinien przedstawiać tylko wartości obserwacji. " +
+                "Dodatkowo, na niepoprawnym wykresie mamy do czynienia z uciętą osią Y/r (zaczyna się ona od 40 lat), co wyolbrzymia różnicę.",
             "source": "https://i.redd.it/n3nc8r2qql811.png"
         },
         {
@@ -27,11 +30,14 @@ $(document).ready(function () {
                 "Wszystkie odpowiedzi są poprawne"
             ],
             "correctIndex": 5,
-            "explanation": "Wszystkie odpowiedzi są poprawne. W miejscu źródła danych podany został margines błędu (ang. “Margin of Error”). Na wykresie kołowym nie jesteśmy w stanie przedstawić upływu czasu, więc jest on tutaj niepoprawnie użyty. Dodatkowo wykres nie zawiera konkretnych lat tylko względne informacje na temat czasu (dzisiaj), co w przyszłości nie pozwoli określić kiedy przeprowadzana została obserwacja. Dodatkowo, suma wartości procentowych na wykresie kołowym nie sumuje się do 100%.",
+            "explanation": "Wszystkie odpowiedzi są poprawne. W miejscu źródła danych podany został margines błędu (ang. ”Margin of Error”). " +
+                "Na wykresie kołowym nie jesteśmy w stanie przedstawić upływu czasu, więc jest on tutaj niepoprawnie użyty. " +
+                "Dodatkowo wykres nie zawiera konkretnych lat, tylko względne informacje na temat czasu (dzisiaj), co w przyszłości nie pozwoli określić kiedy przeprowadzana została obserwacja. " +
+                "Ponadto wartości procentowe na wykresie kołowym nie sumują się do 100%.",
             "source": "https://i.imgur.com/apLslaAl.jpg"
         },
         {
-            "question": "Jak przedstawia się zależność czasu potrzebnego na wykonanie 20 milionów “zielonych krążków” od liczby robotników wykonujących pracę?",
+            "question": "Jak przedstawia się zależność czasu potrzebnego na wykonanie 20 milionów ”zielonych krążków” od liczby robotników wykonujących pracę?",
             "image": "images/img3_incorrect.png",
             "goodImage": "images/img3_correct.png",
             "choices": [
@@ -41,11 +47,12 @@ $(document).ready(function () {
                 "Zależność jest wykładnicza"
             ],
             "correctIndex": 1,
-            "explanation": "Ta zależność przyjmuje kształt hiperboli. Na niepoprawnym wykresie wartości na osi X nie są uporządkowane. Ponadto osie powinny być zamienione, gdyż liczba osób jest stałą wartością, a czas wykonania jest w tym przypadku zmienną.",
+            "explanation": "Ta zależność przyjmuje kształt hiperboli. Na niepoprawnym wykresie wartości na osi X nie są uporządkowane. " +
+                "Ponadto osie powinny być zamienione, gdyż liczba osób jest stałą wartością, a czas wykonania jest w tym przypadku zmienną.",
             "source": "https://i.redd.it/xp3hnmfkwiv31.png"
         },
         {
-            "question": "Czy liczba morderstw z użyciem broni palnej zmalała od momentu wprowadzenia ustawy “Stand your ground”?",
+            "question": "Czy liczba morderstw z użyciem broni palnej zmalała od momentu wprowadzenia ustawy ”Stand your ground”?",
             "image": "images/img4_incorrect.png",
             "goodImage": "images/img4_correct.png",
             "choices": [
@@ -54,7 +61,9 @@ $(document).ready(function () {
                 "Nie da się tego stwierdzić"
             ],
             "correctIndex": 1,
-            "explanation": "Liczba morderstw z użyciem broni palnej wzrosła po wprowadzeniu ustawy. Skala na osi Y została zamieniona, przez co trend wydaje się być odwrotny do rzeczywistego. Podobny efekt ma czerwona ramka - opis tekstowy zwykle jest umieszczany nad tłem, przez co kolor biały zaczyna wyglądać na kolor przekazujący informację.",
+            "explanation": "Liczba morderstw z użyciem broni palnej wzrosła po wprowadzeniu ustawy. " +
+                "Skala na osi Y została zamieniona, przez co trend wydaje się być odwrotny do rzeczywistego. " +
+                "Podobny efekt ma czerwona ramka – opis tekstowy zwykle jest umieszczany nad tłem, przez co kolor biały zaczyna wyglądać na kolor przekazujący informację.",
             "source": "https://i.redd.it/wyel993y3dmy.jpg"
         },
         {
@@ -81,7 +90,8 @@ $(document).ready(function () {
                 "Czerwony"
             ],
             "correctIndex": 2,
-            "explanation": "Czarny jest najpopularniejszym kolorem butów. Kolory przypisane słupkom nie odpowiadają kolorom butów. Dodatkowo między kolorami nie ma określonego porządku, w związku z czym czytelniejszy jest ustawienie słupków w kolejności rosnącej lub malejącej.",
+            "explanation": "Czarny jest najpopularniejszym kolorem butów, kolory przypisane słupkom nie odpowiadają kolorom butów. " +
+                "Dodatkowo między kolorami nie ma określonego porządku, w związku z czym czytelniejsze jest ustawienie słupków w kolejności rosnącej lub malejącej.",
             "source": "https://www.reddit.com/r/dataisugly/comments/ey62bz/shoe_color_frequency/"
         },
         {
@@ -89,12 +99,13 @@ $(document).ready(function () {
             "image": "images/img7_incorrect.svg",
             "goodImage": "images/img7_correct.svg",
             "choices": [
-                "... zdecydowanie większa",
-                "... zdecydowanie mniejsza",
-                "... prawie taka sama"
+                "Zdecydowanie większa",
+                "Zdecydowanie mniejsza",
+                "Prawie taka sama"
             ],
             "correctIndex": 1,
-            "explanation": "Wartość była zdecydowanie mniejsza. Każda ze zmiennych ma własną skalę osi Y na wykresie niepoprawnym. Zaburza to wizualizację zależności pomiędzy tymi zmiennymi. Skala dla zmiennych powinna być taka sama.",
+            "explanation": "Wartość była zdecydowanie mniejsza. Każda ze zmiennych na wykresie niepoprawnym ma własną skalę osi Y. " +
+                "Zaburza to wizualizację zależności pomiędzy tymi zmiennymi. Skala dla zmiennych powinna być taka sama.",
             "source": "http://blog.tableau-software.pl/2015/03/najczesciej-popeniane-bedy-przy.html"
         },
         {
@@ -108,22 +119,23 @@ $(document).ready(function () {
                 "5%"
             ],
             "correctIndex": 3,
-            "explanation": "Plon ziarna pszenicy typu APOSTEL jest większy od plonu ziarna pszenicy typu Formacja o 5 punktów procentowych, a także o 5%. Wobec tego prawidłowa odpowiedź to 105%. Błąd wizualizacji polega na wykorzystaniu utrudniającego odczytanie danych wizerunku kłosa oraz osi Y nie zaczynającej się w 0.",
-            "source": ""
+            "explanation": "Plon ziarna pszenicy typu APOSTEL jest większy od plonu ziarna pszenicy typu Formacja o 5 punktów procentowych, a także o 5%. " +
+                "Błąd wizualizacji polega na wykorzystaniu utrudniającego odczytanie danych wizerunku kłosa oraz osi Y nie zaczynającej się w zerze.",
+            "source": "http://smarterpoland.pl/index.php/2019/12/najgorszy-wykres-2019/"
         },
         {
             "question": "Jaki procent ludności odpowiedziało “Zdecydowanie nie” na pytanie ankietowe?",
             "image": "images/img9_incorrect.png",
             "goodImage": "images/img9_correct.png",
             "choices": [
-                "11-15%",
-                "16-20%",
-                "21-25%",
-                "26-30%"
+                "11–15%",
+                "16–20%",
+                "21–25%",
+                "26–30%"
             ],
             "correctIndex": 3,
-            "explanation": "Prawidłowa odpowiedź to 29%. Błąd wizualizacji polega na nałożeniu koperty na wykres kołowy oraz zachowania proporcji względem kąta, a nie powierzchni, co jest kontrintuicyjne.",
-            "source": ""
+            "explanation": "Prawidłowa odpowiedź to 29%. Błąd wizualizacji polega na nałożeniu koperty na wykres kołowy oraz zachowaniu proporcji względem kąta, a nie powierzchni, co jest kontrintuicyjne.",
+            "source": "http://smarterpoland.pl/index.php/2019/12/najgorszy-wykres-2019/"
         },
         {
             "question": "Czy podwyżka wynagrodzeń nauczycieli w roku 2020 jest wyższa niż w roku 2019?",
@@ -134,8 +146,9 @@ $(document).ready(function () {
                 "Nie"
             ],
             "correctIndex": 1,
-            "explanation": "Prawidłowa odpowiedź brzmi nie, ponieważ podwyżka wynagrodzeń w 2020r. wynosi 1,4 mld zł. Błąd, a raczej prawdopodobnie celowa dezinformacja, polega na zmianie formy ostatniego słupka - reprezentuje on sumaryczną podwyżkę z lat 2017-2020.",
-            "source": ""
+            "explanation": "Prawidłowa odpowiedź brzmi nie, ponieważ podwyżka wynagrodzeń w 2020 r. wynosi 1,4 mld zł. " +
+                "Błąd, a raczej prawdopodobnie celowa dezinformacja, polega na zmianie formy ostatniego słupka – reprezentuje on sumaryczną podwyżkę z lat 2017-2020.",
+            "source": "https://twitter.com/men_gov_pl/status/1109050109785001985"
         }
     ];
     let currentQuestion = 0,
